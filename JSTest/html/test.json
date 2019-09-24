@@ -1,0 +1,37 @@
+{
+  "inbound": {
+    "port": 1080,
+    // 监听端口
+    "protocol": "socks",
+    // 入口协议为 SOCKS 5
+    "domainOverride": [
+      "tls",
+      "http"
+    ],
+    "settings": {
+      "auth": "noauth"
+    }
+  },
+  "outbound": {
+    "protocol": "vmess",
+    // 出口协议
+    "settings": {
+      "vnext": [
+        {
+          "address": "imcaviare.com",
+          // 服务器地址，请修改为你自己的服务器 IP 或域名
+          "port": 16823,
+          // 服务器端口
+          "users": [
+            {
+              "id": "*********-6324-4d53-ad4f-8cda48b30811",
+              // 用户 ID，必须与服务器端配置相同
+              "alterId": 233
+              // 此处的值也应当与服务器相同
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
