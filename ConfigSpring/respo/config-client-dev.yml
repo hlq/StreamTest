@@ -1,4 +1,4 @@
 foo : foo version 21
-
+from : StreamHe
 democonfigclient:
   message : hello spring io
