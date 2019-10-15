@@ -11,8 +11,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/forezp/SpringcloudConfig.git
-          search-paths: respo
+#          uri: https://github.com/forezp/SpringcloudConfig
+#          uri: https://github.com/forezp/SpringcloudConfig.git
+          uri: https://github.com/hlq/StreamTest.git
+          search-paths: ConfigSpring/respo
 #          username: javaeer@qq.com
 #          password: Hl3225518001
       label: master
