@@ -1,9 +1,9 @@
 spring:
   cloud:
     config:
-      #      uri: http://localhost:5001
+#      uri: http://localhost:5001
       profile: dev
       label: master
       discovery:
         enabled: true
-        service-id: config-server      
+        service-id: config-server
