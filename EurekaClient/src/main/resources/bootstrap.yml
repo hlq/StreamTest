@@ -6,4 +6,20 @@ spring:
       label: master
       discovery:
         enabled: true
-        service-id: config-server      
+        service-id: config-server
+    bus:
+      refresh:
+        enabled: true      
+  kafka:
+    bootstrap-servers: localhost:9092
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh 
+    
+    
+#注意在 config-client 节点不能配置 spring.kafka.consumer.group-id=test ，
+#一旦配置了通过 POST方法访问 config Server 的 /actuator/bus-refresh 接口
+#就只能更新某一台 config-client 的配置，其他 config-client节点的配置不会更新。

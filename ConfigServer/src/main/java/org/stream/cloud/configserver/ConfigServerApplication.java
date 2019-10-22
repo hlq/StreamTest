@@ -11,9 +11,19 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableEurekaClient
 @EnableDiscoveryClient
 public class ConfigServerApplication {
-
+    /**
+     * http://localhost:5001/service-hi/dev/master git 内容  
+     * http://localhost:5001/actuator/bus-refresh post 更新config
+     * 
+     * 
+     */
+    
+    
+    
     public static void main(String[] args) {
         SpringApplication.run(ConfigServerApplication.class, args);
     }
 
 }
+
+

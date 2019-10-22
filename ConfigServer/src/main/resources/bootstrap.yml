@@ -2,29 +2,46 @@ server:
   port: 5001
 spring:
   application:
-    name: config-server
-    
+    name: config-server    
   cloud:
     config:
       server:
         git:
-#          uri: https://github.com/forezp/SpringcloudConfig
           uri: https://github.com/hlq/StreamTest.git
           search-paths: ConfigSpring/respo
 #          username: javaeer@qq.com
 #          password: Hl3225518001
       label: master
+    bus:
+      trace:
+        enabled: true
+      enabled: true      
+#    stream:
+#      kafka:        
+#        binder:            
+#          brokers: localhost          
+  kafka:
+    consumer:
+      group-id: kafka-test-topic
+    bootstrap-servers: localhost:9092
 
 
 eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
-
 #    指定具体ip可让外网ip访问
 #    ip-address: 
 #    hostname: ${spring.cloud.client.ip-address}
-
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh 
+#        include: '*' 
+
+# yml中是include: '*', properties中是 include=*
